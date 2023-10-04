@@ -8,12 +8,10 @@ for i in range(46):
     dict_ziehungen_statistic[i] = 0
 
 def lottoziehung(array, anzahlZiehungen):
-    gezogene_zahlen = []
     for i in range(anzahlZiehungen):
         rand = ran.randint(0,45-i)
         array[rand], array[45-i] = array[45-i], array[rand]
-        gezogene_zahlen.append(array[45-i])
-    return gezogene_zahlen
+    return array[-6:]
 
 
 ziehungen = lottoziehung(zahlen,6)
@@ -39,3 +37,4 @@ axs.set_ylabel('Anzahl der gezogenen Zahlen')
 axs.set_xlabel('Mögliche Zahlen')
 
 plt.show()
+
